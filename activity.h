@@ -1,8 +1,10 @@
+using namespace std;
 // =================================================================
 //
 // File: activity.h
-// Author:
-// Date:
+// Author: Sebastian Flores Lemus | A01709229
+// Date: 08/27/2022
+// Actividad: 1.1 - Funciones Iterativas, Recursivas y su análisis de Complejidad
 //
 // =================================================================
 #ifndef ACTIVITY_H
@@ -14,10 +16,21 @@
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	O(n) - linear complexity
+// The complexity is O(n) since we have 1 for loop which ends 
+// with the variable n, and we see how i will add itself 'i++'
+// if we had another operation with i or multiple for loops then 
+// the complexity would increase. A linear complexity means that
+// the runtime grows almost linearly with the input size.
 // =================================================================
 unsigned int sumaIterativa(unsigned int n) {
-	return 0;
+    int sumaIterativaResultado = 0;
+
+    for(int i=1; i<=n; i++){
+        sumaIterativaResultado = sumaIterativaResultado + i;
+    }
+  
+    return sumaIterativaResultado;
 }
 
 // =================================================================
@@ -26,22 +39,35 @@ unsigned int sumaIterativa(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	O(n) - linear complexity
+// The complexity is O(n) since we are only calling the function
+// 'sumaRecursiva' once and the operation is a simple substraction.
+// If we call the function more than once or the operation is more 
+// complex for example a division, the complexity of the alogorth 
+// would be higher. A linear complexity means that
+// the runtime grows almost linearly with the input size.
 // =================================================================
 unsigned int sumaRecursiva(unsigned int n) {
-	return 0;
+    if (n <= 1)
+        return n;
+    else
+        return n + sumaRecursiva(n - 1);
 }
-
 // =================================================================
 // sumaDirecta. Calculate the sum from 1 to n with a mathematical
 // method.
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	O(1) - constant
+// The complexity is O(1) since we have no loops nore we are 
+// using recursion to call the function.
+// The runtime of this algorithm is constant, which means no matter
+// the input size the runtime will be the same.
 // =================================================================
 unsigned int sumaDirecta(unsigned int n) {
-	return 0;
+  int resultadoSumaDirecta = 0;
+	return resultadoSumaDirecta = (n*(n+1)/2);
 }
 
 #endif /* ACTIVITY_H */
